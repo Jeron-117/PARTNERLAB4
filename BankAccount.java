@@ -1,9 +1,17 @@
 public class BankAccount {
+    private static int accountNumberSeed =0;
+    private int accountNumber;
     private double balance;
-    StringBuilder getStatement;
+    private StringBuilder getStatement;
     
-    public BankAccount() {
+    BankAccount() {
         balance = 0.0;
+        accountNumber = accountNumberSeed++;
+        transactions = new StringBuilder;
+        transactions.append(" " + accountNumber);
+        transactions.append(/n);
+        transactions.append(" " + balance);
+        transactions.append(/n);
     }
 
     public BankAccount(double amount) {
